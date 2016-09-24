@@ -1,3 +1,4 @@
+<?php include "base.php"; ?>
 <html>
 	<head>
 		<title>Informatics | DebtWork</title>
@@ -45,6 +46,45 @@
 				</li>
 			</ul>
 		</nav>
-		<h1>Main Landing Page</h1>
+
+		<?php
+		if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
+		{
+		?>
+			<h1>Main Landing Page</h1>
+			<h3>You should see this if you are already logged in</h3>
+		<?php
+		}
+		elseif(!empty($_POST['username']) && !empty($_POST['password']))
+		{
+			$username = mysql_real_escape_string($_POST['username']);
+    			$password = md5(mysql_real_escape_string($_POST['password']));
+
+    			$checklogin = mysql_query("SELECT * FROM user WHERE username = '".$username."' AND password = '".$password."'");
+			
+			if(mysql_num_rows($checklogin) == 1)
+			{
+				$row = mysql_fetch_array($checklogin);
+				$email = $row['EmailAddress'];
+				$_SESSION['Username'] = $username;
+				$_SESSION['EmailAddress'] = $email;
+				$_SESSION['LoggedIn'] = 1;
+
+				echo "<h1>Logging u in now fam</h1>";
+				echo "<meta http-equiv='refresh' content='=2;main.php' />";
+			}
+			else
+			{
+				echo "<h1>Login Failed homie</h1>";
+			}
+		}
+		else
+		{
+		?>
+			<h1>Welcome to Debtwork!</h1>
+			<p>Debtwork is a debt-tracking app for you and your friends</p>
+		<?php
+		}
+		?>
 	</body>
 </html>

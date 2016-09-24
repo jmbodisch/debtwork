@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Sign Up | DebtWork</title>
+		<title>Sign In | DebtWork</title>
 		<!-- Latest compiled and minified CSS -->
 		<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<link rel="stylesheet"
@@ -37,27 +37,14 @@
 		</style>
 	</head>
 	<body>
-	<div id="main">
-			<h1>Sign Up</h1><br><br>
-			<form method="POST" action="register.php">
-				<div class="form-inline">
-					<div class="form-group form-left">
-						<input type="text" class="form-control" name="first" placeholder="First Name">
-					</div>
-					<div class="form-group form-right">
-						<input type="text" class="form-control" name="last" placeholder="Last Name">
-					</div>
-				</div>
+		<div id="main">
+			<h1>Sign In</h1><br><br>
+			<form method="POST" action="">
 				<div class="form-group">
-					<input type="email" class="form-control" name="email" placeholder="Enter Email">
+					<input type="text" class="form-control" name="user" placeholder="Username or Email">
 				</div><br>
 				<div class="form-group">
-					<input type="text" class="form-control" name="username" maxlength="65" placeholder="Username">
-					<small class="form-text text-muted">Limit: 65 characters</small>
-				</div><br>
-				<div class="form-group">
-					<input type="password" class="form-control" name="password" maxlength="32" placeholder="Password">
-					<small class="form-text text-muted">Limit: 32 characters</small>
+					<input type="password" class="form-control" name="password" placeholder="Password">
 				</div><br><br>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>

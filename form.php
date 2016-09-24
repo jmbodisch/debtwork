@@ -1,3 +1,4 @@
+<?php include "base.php"; ?>
 <html>
 	<head>
 		<title>New Form | DebtWork</title>
@@ -17,7 +18,7 @@
 			#main
 			{
 				margin: auto;
-				width: 30%;
+				width: 22%;
 				text-align: center;
 			}
 			#link
